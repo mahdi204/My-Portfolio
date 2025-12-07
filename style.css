@@ -355,7 +355,7 @@
             border-radius: 10px;
             box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
-            margin-bottom: 2rem;
+            margin-bottom: 5rem;
             opacity: 0;
             /* Add this - start hidden */
             transform: translateY(50px);
@@ -366,9 +366,52 @@
             background-image: url('images/Projects/nine-blocks-tree-3.png');
             overflow: hidden;
             background-repeat: no-repeat;
-            background-position: 10px 70px;
+            background-position: 10px 20px;
             opacity: 0.5;
         }
+
+        .project-two h1 {
+            /*declare the space between lines*/
+            line-height: 5rem;
+        }
+
+        .play-button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #f0f0f0;
+            margin-top: 40px;
+            height: 40px;
+            width: 20%;
+            border-radius: 3px;
+            border: none;
+            transition: background-color 0.3s ease;
+            color: #222522;
+        }
+
+        .play-button:hover {
+            background-color: #e4d2aa;
+            cursor: pointer;
+        }
+
+        .play-button a {
+            text-decoration: none;
+            color: inherit;
+            font-weight: bold;
+        }
+
+
+        .user-flow-header-container {
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+
+        .user-flow-image {
+            width: 100%;
+            height: auto;
+        }
+
+
 
 
 
@@ -415,6 +458,23 @@
             display: flex;
             align-items: center;
             justify-content: center;
+        }
+
+        .plants-design-container {
+            margin-top: 200px;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+
+        .plants-design-header-container {
+            width: 100%;
+        }
+
+        .user-flow-container {
+            margin-top: 100px;
         }
 
 
