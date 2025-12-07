@@ -151,11 +151,27 @@
             z-index: 1000;
         }
 
+        .hero-header-container {
+            display: flex;
+            gap: 2rem;
+        }
+
         .hero h1 {
+            display: flex;
+            align-items: center;
+            white-space: nowrap;
             font-family: "GnomonForeground";
             font-size: 7rem;
             color: #c3dbdc;
             animation: slideUp 1.3s ease-out 0s both;
+        }
+
+        .left-pattern {
+            animation: slideLeft 1s ease-out 0.5s both;
+        }
+
+        .right-pattern {
+            animation: slideRight 1s ease-out 0.5s both;
         }
 
 
@@ -187,6 +203,7 @@
             min-height: 100vh;
             background-color: #1E201E;
             scroll-margin-top: 100px;
+            margin: 0;
         }
 
 
@@ -196,9 +213,8 @@
         }
 
 
-
         .section-title {
-            font-size: 2.5rem;
+            display: flex;
             text-align: center;
             margin-bottom: 3rem;
             color: #c3dbdc;
@@ -207,17 +223,22 @@
             transform: translateY(30px);
         }
 
-        .section-title.animate {
-            animation: fadeInUp 0.6s ease-out forwards;
+        .section-title h2 {
+            font-size: 2.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
-        .section-title::after {
-            content: '';
-            display: block;
-            width: 80px;
-            height: 3px;
-            margin: 1rem auto;
+        .section-title.animate {
+            animation: fadeInUp 0.6s ease-out forwards;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0;
         }
+
+
 
         .about-content {
             display: grid;
@@ -339,7 +360,6 @@
         /* Projects Section */
         .projects {
             background-color: #1E201E;
-            padding: 0rem 2rem;
             scroll-margin-top: 100px;
         }
 
@@ -363,11 +383,29 @@
         }
 
         .project-one {
-            background-image: url('images/Projects/nine-blocks-tree-3.png');
+            position: relative;
+            /* Add this */
             overflow: hidden;
             background-repeat: no-repeat;
             background-position: 10px 20px;
+        }
+
+        .project-one::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: url('images/Projects/nine-blocks-tree-3.png');
+            background-repeat: no-repeat;
+            background-position: 10px 20px;
             opacity: 0.5;
+            /* Only the background image has opacity */
+            z-index: -1;
+            /* Place it behind the content */
+            pointer-events: none;
+            /* Allow clicks to pass through */
         }
 
         .project-two h1 {
@@ -574,7 +612,7 @@
 */
 
         .contact-item h4 {
-            color: #444;
+            color: #c3dbdc;
             margin-bottom: 0.5rem;
         }
 
@@ -611,6 +649,31 @@
                 transform: translateY(0);
                 opacity: 1;
             }
+        }
+
+        @keyframes slideLeft {
+            from {
+                transform: translateX(-30px);
+                opacity: 0;
+            }
+
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideRight {
+            from {
+                transform: translateX(30px);
+                opacity: 0;
+            }
+
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+
         }
 
         @keyframes slideUp {
