@@ -44,3 +44,17 @@ const sectionObserver = new IntersectionObserver(entries => {
 document.querySelectorAll("section:not(#home)").forEach(section => {
     sectionObserver.observe(section);
 });
+// Initialize Glide.js for project carousel
+document.addEventListener('DOMContentLoaded', function () {
+    const slider = document.querySelector('.project-slider');
+
+    if (slider && typeof Glide !== 'undefined') {
+        new Glide('.project-slider', {
+            type: 'carousel',
+            perView: 1,
+            autoplay: 8000,
+            hoverpause: true,
+            animationDuration: 600
+        }).mount();
+    }
+});
