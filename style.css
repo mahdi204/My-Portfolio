@@ -415,7 +415,8 @@
 
        .project-one,
        .project-two,
-       .project-three {
+       .project-three,
+       .project-four {
            position: relative;
 
            padding: 3rem 20rem;
@@ -578,9 +579,15 @@
            /* Stagger delay */
        }
 
+       .project-four.animate {
+           animation: fadeInUp 0.6s ease-out 0.7s forwards;
+           /* Stagger delay */
+       }
+
        .project-one:hover,
        .project-two:hover,
-       .project-three:hover {
+       .project-three:hover,
+       .project-four:hover {
            transform: translateY(-10px);
            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
        }

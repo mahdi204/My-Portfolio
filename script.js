@@ -32,7 +32,7 @@ const sectionObserver = new IntersectionObserver(entries => {
             if (title) title.classList.add("animate");
 
             const children = entry.target.querySelectorAll(
-                ".about-content, .skill-card, .project-one, .project-two,.project-three, .contact-content"
+                ".about-content, .skill-card, .project-one, .project-two, .project-three, .project-four, .contact-content"
             );
             children.forEach(child => child.classList.add("animate"));
         }
@@ -46,15 +46,17 @@ document.querySelectorAll("section:not(#home)").forEach(section => {
 });
 // Initialize Glide.js for project carousel
 document.addEventListener('DOMContentLoaded', function () {
-    const slider = document.querySelector('.project-slider');
+    const sliders = document.querySelectorAll('.project-slider');
 
-    if (slider && typeof Glide !== 'undefined') {
-        new Glide('.project-slider', {
-            type: 'carousel',
-            perView: 1,
-            autoplay: 8000,
-            hoverpause: true,
-            animationDuration: 600
-        }).mount();
+    if (sliders.length && typeof Glide !== 'undefined') {
+        sliders.forEach((slider) => {
+            new Glide(slider, {
+                type: 'carousel',
+                perView: 1,
+                autoplay: 8000,
+                hoverpause: true,
+                animationDuration: 600
+            }).mount();
+        });
     }
 });
